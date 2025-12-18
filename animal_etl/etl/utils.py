@@ -5,7 +5,7 @@ from urllib3.util.retry import Retry
 
 def get_session(retries=5, backoff_factor=1, status_forcelist=(500, 502, 503, 504)):
     """
-    Request session cereation which will
+    Request session cereation which will retry incase of failure
     """
     session = requests.Session()
     retry = Retry(
